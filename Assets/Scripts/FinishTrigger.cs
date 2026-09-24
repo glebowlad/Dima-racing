@@ -1,18 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FinishTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public LapTimeManager lapTimeManager;
+    // public BoxCollider opener;
+    public float lapTime;
+    public float bestTime;
     void Start()
     {
-        
+        bestTime = Mathf.Infinity;
+        // bestTime= PlayerPrefs.GetFloat("best", bestTime);
+        //lapTimeManager.SetBestTime(bestTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            //opener.isTrigger = true;
+            LapTime = LapTimeManager.SecCount;
+            LapTimeManager.SecCount = 0;
+            LapCounter.CurrentLap++;
+            if (lapTime < bestTime)
+            {
+                bestTime = lapTime;
+                lapTimeManager.SetBestTime(bestTime);
+                //PlayerPrefs.SetFloat("best", bestTime);
+                // PlayerPrefs.Save();
+            }
+        }
     }
 }
