@@ -1,33 +1,29 @@
+using System;
+using System.Collections;
+using TMPro;
 using UnityEngine;
-
-public class FinishOpener : MonoBehaviour
+public class LapTimeManager : MonoBehaviour
 {
-    public LapTimeManager lapTimeManager;
-    // public BoxCollider opener;
-    public float lapTime;
-    public float bestTime;
-    void Start()
+    public TextMeshProUGUI lapText, bestTimeText; //startCounter;
+    public static float SecCount;
+    public System.TimeSpan time;
+    private static TimeSpan bestTime;
+    // public PrometeoCarController carController;
+   
+    void Update()
     {
-        bestTime = Mathf.Infinity;
-        // bestTime= PlayerPrefs.GetFloat("best", bestTime);
-        //lapTimeManager.SetBestTime(bestTime);
+        SecCount += Time.deltaTime;
+        time = System.TimeSpan.FromSeconds(SecCount);
+        lapText.text = string.Format("Lap Time: {0:D2}:{1:D2}.{2:D2}", time.Minutes, time.Seconds, time.Milliseconds / 10);
     }
-
-    private void OnTriggerEnter(Collider other)
+    public void SetBestTime(float best)
     {
-        if (other.tag == "Player")
+        if (best == Mathf.Infinity)
         {
-            //opener.isTrigger = true;
-            LapTime = LapTimeManager.SecCount;
-            LapTimeManager.SecCount = 0;
-            LapCounter.CurrentLap++;
-            if (lapTime < bestTime)
-            {
-                bestTime = lapTime;
-                lapTimeManager.SetBestTime(bestTime);
-                //PlayerPrefs.SetFloat("best", bestTime);
-                // PlayerPrefs.Save();
-            }
+            bestTimeText.text = "00:00.00";
+            return;
         }
+        bestTime = System.TimeSpan.FromSeconds(best);
+        bestTimeText.text = string.Format("Best time: {0:D2}:{1:D2}.{2:D2}", bestTime.Minutes, bestTime.Seconds, bestTime.Milliseconds / 10);
     }
 }

@@ -18,9 +18,9 @@ public class FinishTrigger : MonoBehaviour
         if (other.tag == "Player")
         {
             //opener.isTrigger = true;
-            LapTime = LapTimeManager.SecCount;
+            lapTime = LapTimeManager.SecCount;
             LapTimeManager.SecCount = 0;
-            LapCounter.CurrentLap++;
+           // LapCounter.CurrentLap++;
             if (lapTime < bestTime)
             {
                 bestTime = lapTime;
