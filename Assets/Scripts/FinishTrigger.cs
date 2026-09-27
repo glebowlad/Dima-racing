@@ -3,7 +3,7 @@ using UnityEngine;
 public class FinishTrigger : MonoBehaviour
 {
     public LapTimeManager lapTimeManager;
-    // public BoxCollider opener;
+    public restriction opener;
     public float lapTime;
     public float bestTime;
     void Start()
@@ -17,7 +17,7 @@ public class FinishTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //opener.isTrigger = true;
+            opener.col.isTrigger = true;
             lapTime = LapTimeManager.SecCount;
             LapTimeManager.SecCount = 0;
            // LapCounter.CurrentLap++;
