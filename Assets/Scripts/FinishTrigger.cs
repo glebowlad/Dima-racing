@@ -20,7 +20,7 @@ public class FinishTrigger : MonoBehaviour
             opener.col.isTrigger = true;
             lapTime = LapTimeManager.SecCount;
             LapTimeManager.SecCount = 0;
-           // LapCounter.CurrentLap++;
+            LapCounter.CurrentLap++;
             if (lapTime < bestTime)
             {
                 bestTime = lapTime;
