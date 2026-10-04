@@ -10,12 +10,12 @@ public class LapCounter : MonoBehaviour
     {
        
         CurrentLap = 0;
-        lapText.text = CurrentLap.ToString() + "/" + totalLaps.ToString();
+        lapText.text = "Laps"+CurrentLap.ToString() + "/" + totalLaps.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        lapText.text = CurrentLap.ToString() + "/" + totalLaps.ToString();
+        lapText.text = "Laps" + CurrentLap.ToString() + "/" + totalLaps.ToString();
     }
 }

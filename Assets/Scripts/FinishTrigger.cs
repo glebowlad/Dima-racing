@@ -9,8 +9,8 @@ public class FinishTrigger : MonoBehaviour
     void Start()
     {
         bestTime = Mathf.Infinity;
-        // bestTime= PlayerPrefs.GetFloat("best", bestTime);
-        //lapTimeManager.SetBestTime(bestTime);
+         bestTime= PlayerPrefs.GetFloat("best", bestTime);
+        lapTimeManager.SetBestTime(bestTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,8 +25,8 @@ public class FinishTrigger : MonoBehaviour
             {
                 bestTime = lapTime;
                 lapTimeManager.SetBestTime(bestTime);
-                //PlayerPrefs.SetFloat("best", bestTime);
-                // PlayerPrefs.Save();
+                PlayerPrefs.SetFloat("best", bestTime);
+                 PlayerPrefs.Save();
             }
         }
     }
