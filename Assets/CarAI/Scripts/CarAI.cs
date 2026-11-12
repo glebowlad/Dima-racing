@@ -118,7 +118,7 @@ public class CarAI : MonoBehaviour
             }
 
             // Запрашиваем новый путь ТОЛЬКО когда осталось меньше 2 точек И мы еще не в процессе расчета
-            if (currentWayPoint >= waypoints.Count - 2 && !isCalculatingPath)
+            if (CustomDestination == null && Patrol && currentWayPoint >= waypoints.Count - 2 && !isCalculatingPath)
             {
                 CreatePath();
             }

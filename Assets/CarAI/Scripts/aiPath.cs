@@ -5,24 +5,31 @@ using UnityEngine;
 public class aiPath : MonoBehaviour
 {
     public List<Transform> points;
-    public CarAI car;
+    public List<CarAI> cars;
     private Transform targetPoint;
-    private int pointIndex=3;
+    private int pointIndex=0;
 
     // Start is called before the first frame update
     void Start()
     {
         targetPoint = points[pointIndex];
-        
+        foreach (CarAI car in cars)
+        {
+            car.CustomDestination = targetPoint;
+            car.Invoke(nameof(CarAI.CustomPath),0.2f);
+
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        foreach (CarAI car in cars)
+        {
+           // car.CustomPath(targetPoint);
 
-        car.CustomPath(targetPoint);
-
-        if (Vector3.Distance(targetPoint.position, car.transform.position) <= 10f)
+            if (Vector3.Distance(targetPoint.position, car.transform.position) <= 10f)
         {
             pointIndex++;
             if (pointIndex >= points.Count)
@@ -30,6 +37,7 @@ public class aiPath : MonoBehaviour
 
             targetPoint = points[pointIndex];
             car.CustomPath(targetPoint);
+        }
         }
         
     }
