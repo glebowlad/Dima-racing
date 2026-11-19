@@ -16,7 +16,7 @@ public class aiPath : MonoBehaviour
         foreach (CarAI car in cars)
         {
             car.CustomDestination = targetPoint;
-            car.Invoke(nameof(CarAI.CustomPath),0.2f);
+            car.Invoke(nameof(CarAI.CustomPath),Random.Range(0.2f,0.5f));
 
         }
 
