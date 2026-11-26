@@ -15,8 +15,9 @@ public class FinishTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" || other.tag=="Enemy" )
+        if (other.tag == "Player"  )
         {
+            opener.meshRend.enabled = false;
             opener.col.isTrigger = true;
             lapTime = LapTimeManager.SecCount;
             LapTimeManager.SecCount = 0;
