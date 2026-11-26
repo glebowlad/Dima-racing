@@ -5268,6 +5268,44 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
   m_PrefabInstance: {fileID: 1681000485}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &218472032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218472028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22657a7586f34e444bfe69fe6fc90808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col: {fileID: 0}
+--- !u!114 &218472033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218472028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb98d5806b2d6b40a1d3ea3ce239b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1613285640}
+  - {fileID: 1685116243}
+  - {fileID: 1984094020}
+  - {fileID: 2134031378}
+  - {fileID: 1273629534}
+  - {fileID: 147016830}
+  - {fileID: 160435506}
+  - {fileID: 1245698676}
+  - {fileID: 327818245}
+  - {fileID: 776336109}
+  stuckTimeLimit: 4
+  minSpeedThreshold: 0.5
 --- !u!1 &220869167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6156632962304447296, guid: fca05fc86b15f0d4da25ed7793db4384, type: 3}
@@ -11550,6 +11588,7 @@ GameObject:
   - component: {fileID: 769652421}
   - component: {fileID: 769652420}
   - component: {fileID: 769652419}
+  - component: {fileID: 769652422}
   m_Layer: 0
   m_Name: enemy car (1)
   m_TagString: Player
@@ -11623,6 +11662,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769652422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769652418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb464849d8e68f245b1656b1642ae31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1613285640}
+  - {fileID: 1685116243}
+  - {fileID: 1984094020}
+  - {fileID: 2134031378}
+  - {fileID: 1273629534}
+  - {fileID: 147016830}
+  - {fileID: 160435506}
+  - {fileID: 1245698676}
+  - {fileID: 327818245}
+  - {fileID: 776336109}
+  stuckTimeLimit: 4
+  minSpeedThreshold: 0.5
 --- !u!1 &776336108
 GameObject:
   m_ObjectHideFlags: 0
@@ -15676,6 +15740,7 @@ GameObject:
   - component: {fileID: 4716153144327206212}
   - component: {fileID: 401546352745270109}
   - component: {fileID: 5348293803420069887}
+  - component: {fileID: 5348293803420069888}
   m_Layer: 0
   m_Name: enemy car
   m_TagString: Player
@@ -15713,6 +15778,31 @@ MonoBehaviour:
   Patrol: 0
   CustomDestination: {fileID: 0}
   move: 1
+--- !u!114 &5348293803420069888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348293803420069886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb464849d8e68f245b1656b1642ae31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1613285640}
+  - {fileID: 1685116243}
+  - {fileID: 1984094020}
+  - {fileID: 2134031378}
+  - {fileID: 1273629534}
+  - {fileID: 147016830}
+  - {fileID: 160435506}
+  - {fileID: 1245698676}
+  - {fileID: 327818245}
+  - {fileID: 776336109}
+  stuckTimeLimit: 4
+  minSpeedThreshold: 0.5
 --- !u!1 &5534399179648492996
 GameObject:
   m_ObjectHideFlags: 0
